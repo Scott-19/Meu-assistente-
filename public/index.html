@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAssistant MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 FinAssistant</h1>
+            <p>Seu assistente financeiro pessoal</p>
+        </header>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <div class="card saldo">
+                <h3>Saldo Atual</h3>
+                <p id="saldo">R$ 0,00</p>
+            </div>
+            <div class="card receitas">
+                <h3>Receitas</h3>
+                <p id="total-receitas">R$ 0,00</p>
+            </div>
+            <div class="card despesas">
+                <h3>Despesas</h3>
+                <p id="total-despesas">R$ 0,00</p>
+            </div>
+        </div>
+
+        <!-- Formulário de Transação -->
+        <div class="card">
+            <h3>➕ Nova Transação</h3>
+            <div class="form-group">
+                <select id="tipo">
+                    <option value="receita">📥 Receita</option>
+                    <option value="despesa">📤 Despesa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="number" id="valor" placeholder="Valor R$" step="0.01">
+            </div>
+            <div class="form-group">
+                <input type="text" id="descricao" placeholder="Descrição">
+            </div>
+            <div class="form-group">
+                <select id="categoria">
+                    <option value="outros">Outros</option>
+                    <option value="salario">Salário</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="saude">Saúde</option>
+                </select>
+            </div>
+            <button onclick="adicionarTransacao()" class="btn-primary">
+                Adicionar Transação
+            </button>
+        </div>
+
+        <!-- Lista de Transações -->
+        <div class="card">
+            <h3>📋 Últimas Transações</h3>
+            <div id="lista-transacoes" class="transactions-list">
+                <p class="empty-state">Nenhuma transação cadastrada</p>
+            </div>
+        </div>
+
+        <!-- Assistente Financeiro -->
+        <div class="card">
+            <h3>🤖 Assistente Financeiro</h3>
+            <div class="form-group">
+                <input type="text" id="pergunta" placeholder="Ex: Como posso economizar mais?">
+            </div>
+            <button onclick="perguntarAssistente()" class="btn-secondary">
+                Perguntar ao Assistente
+            </button>
+            <div id="resposta" class="assistant-response"></div>
+        </div>
+
+        <!-- Exportar Dados -->
+        <div class="card">
+            <h3>💾 Seus Dados</h3>
+            <p>Seus dados são salvos localmente no navegador</p>
+            <button onclick="exportarDados()" class="btn-outline">Exportar CSV</button>
+            <button onclick="limparDados()" class="btn-danger">Limpar Todos os Dados</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
