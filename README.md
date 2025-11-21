@@ -1,2 +1,4 @@
-# Meu-assistente-
-É um protótipo 
+```markdown
+# Financial Assistant MVP
+
+Um assistente financeiro pessoal simples e eficiente.
